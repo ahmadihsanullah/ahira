@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+<html lang="id" class="lock">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Undangan — Annisa &amp; Faraz</title>
+<meta name="description" content="Undangan pernikahan Annisa & Faraz — Halaman Tujuh, Tangerang Selatan.">
+
+<!-- ===== Fonts: Cinzel (display) + Montserrat (isi) + Amiri (teks Arab) ===== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- ===== Tailwind CDN ===== -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { theme: { extend: {
+  colors: { ink:'#0D0D0D', gold:'#C9A45C', goldlight:'#F0DFAC', golddark:'#8A6A2C', cream:'#EFE8D8', muted:'#A79C87' },
+  fontFamily: { sans:['Montserrat','sans-serif'], display:['Cinzel','serif'], arab:['Amiri','serif'] }
+}}};
+</script>
+
+<style>
+/* ============ Dasar ============ */
+html{scroll-behavior:smooth}
+html.lock, html.lock body{overflow:hidden!important;height:100%}
+body{background:radial-gradient(1100px 520px at 50% -8%, rgba(201,164,92,.08), transparent 62%), #0D0D0D}
+::selection{background:rgba(201,164,92,.35);color:#fff}
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-thumb{background:#2a241a;border-radius:8px;border:2px solid #0D0D0D}
+.gone{display:none!important}
+
+/* ============ Teks emas metalik dengan kilau berjalan halus ============ */
+.gold-text{
+  background-image:linear-gradient(110deg,#8a6a2c 0%,#e9d296 22%,#c9a45c 42%,#f7ecc6 58%,#c9a45c 74%,#8a6a2c 100%);
+  background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:goldShift 8s linear infinite;
+}
+@keyframes goldShift{0%{background-position:0% center}100%{background-position:-220% center}}
+@supports not (-webkit-background-clip:text){ .gold-text{color:#C9A45C;background:none} }
+
+/* ============ Bingkai art deco (garis ganda tipis) ============ */
+.deco-frame{position:relative;border:1px solid rgba(201,164,92,.35)}
+.deco-frame::before{content:"";position:absolute;inset:6px;border:1px solid rgba(201,164,92,.16);pointer-events:none}
+
+/* ============ Tombol emas + kilau sheen ============ */
+.gold-btn{position:relative;overflow:hidden;letter-spacing:.16em;
+  background:linear-gradient(135deg,#a97f35 0%,#e9d296 40%,#c9a45c 55%,#f3e3b0 75%,#b38940 100%);color:#191203}
+.gold-btn::after{content:"";position:absolute;top:-20%;bottom:-20%;left:-70%;width:45%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);
+  transform:skewX(-18deg);animation:sheen 3.8s ease-in-out infinite}
+@keyframes sheen{0%,55%{left:-70%}90%,100%{left:140%}}
+.ghost-btn{border:1px solid rgba(201,164,92,.45);color:#EAD9A6;letter-spacing:.14em;transition:background .3s,border-color .3s}
+.ghost-btn:hover{background:rgba(201,164,92,.12)}
+
+/* ============ Reveal saat masuk viewport ============ */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s cubic-bezier(.22,.61,.36,1)}
+.rv.in{opacity:1;transform:translateY(0)}
+
+/* ============ Cover ============ */
+#cover{transition:transform 1s cubic-bezier(.77,0,.18,1),opacity 1s ease}
+#cover.open{transform:translateY(-102%);opacity:.98}
+
+/* ============ Bottom nav & tombol musik melayang ============ */
+#bottomnav{position:fixed;bottom:12px;left:0;right:0;margin-inline:auto;width:calc(100% - 20px);max-width:460px;z-index:70;
+  background:rgba(13,13,13,.9);border:1px solid rgba(201,164,92,.28);backdrop-filter:blur(12px);
+  transition:opacity .5s ease .2s,transform .5s ease .2s}
+#musicBtn{transition:opacity .5s ease .35s,transform .5s ease .35s;display:flex;align-items:center;justify-content:center}
+.nav-hide{opacity:0;pointer-events:none;transform:translateY(16px)}
+.nav-link{position:relative;color:#9C917C;transition:color .3s}
+.nav-link::after{content:"";position:absolute;top:-1px;left:50%;width:20px;height:1px;
+  background:linear-gradient(90deg,transparent,#F0DFAC,transparent);
+  transform:translateX(-50%) scaleX(0);transition:transform .35s}
+.nav-link.active{color:#EFD9A0}
+.nav-link.active::after{transform:translateX(-50%) scaleX(1)}
+
+/* ============ Form ============ */
+.field{width:100%;background:rgba(255,255,255,.02);border:1px solid rgba(201,164,92,.28);
+  padding:.8rem 1rem;font-size:15px;color:#EFE8D8;outline:none;transition:border-color .3s}
+.field::placeholder{color:rgba(239,232,216,.4)}
+.field:focus{border-color:rgba(201,164,92,.8)}
+select.field option{background:#141008;color:#EFE8D8}
+.attend-opt{border:1px solid rgba(201,164,92,.3);padding:.75rem .5rem;font-size:12px;letter-spacing:.14em;
+  text-transform:uppercase;color:#A79C87;transition:all .3s}
+.attend-opt.sel{border-color:rgba(201,164,92,.9);background:rgba(201,164,92,.12);color:#F0DFAC}
+.badge{border:1px solid;padding:.15rem .5rem;font-size:10px;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}
+.badge-in{border-color:rgba(201,164,92,.6);color:#EFD9A0}
+.badge-out{border-color:rgba(239,232,216,.25);color:#9C917C}
+
+/* ============ Timeline love story (diamond node) ============ */
+.tl-item{position:relative;padding-left:36px;padding-bottom:30px}
+.tl-item::before{content:"";position:absolute;left:10px;top:12px;bottom:-4px;width:1px;background:rgba(201,164,92,.4)}
+.tl-item:last-child::before{display:none}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::after{content:"";position:absolute;left:6px;top:7px;width:9px;height:9px;
+  border:1px solid #C9A45C;transform:rotate(45deg);background:#0D0D0D}
+
+/* ============ Lightbox & toast ============ */
+.lb-btn{height:2.5rem;width:2.5rem;border-radius:9999px;border:1px solid rgba(201,164,92,.4);
+  background:rgba(13,13,13,.7);color:#C9A45C;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px)}
+#toast{opacity:0;transform:translateY(10px);transition:opacity .3s,transform .3s;pointer-events:none}
+#toast.show{opacity:1;transform:translateY(0)}
+
+/* ============ Hormati prefers-reduced-motion ============ */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .rv{opacity:1!important;transform:none!important}
+  .gold-btn::after{display:none}
+}
+</style>
+</head>
+
+<body class="bg-ink text-cream antialiased">
+
+<!-- ================= KONTEN UTAMA (desktop: kolom tengah max 480px) ================= -->
+<div class="relative mx-auto min-h-screen w-full max-w-[480px] border-x border-gold/15">
+  <main id="main" class="pb-36">
+    <section id="beranda"  class="px-6 pt-16"></section>
+    <section id="mempelai" class="px-6 pt-20"></section>
+    <section id="acara"    class="px-6 pt-20"></section>
+    <section id="cerita"   class="px-6 pt-20"></section>
+    <section id="galeri"   class="px-6 pt-20"></section>
+    <section id="hadiah"   class="px-6 pt-20"></section>
+    <section id="ucapan"   class="px-6 pt-20"></section>
+    <section id="penutup"  class="px-6 pt-20"></section>
+    <footer class="px-6 pb-6 pt-12 text-center"></footer>
+  </main>
+</div>
+
+<!-- ================= COVER LAYAR PENUH ================= -->
+<div id="cover" class="fixed inset-0 z-[60] mx-auto w-full max-w-[480px] overflow-hidden bg-ink">
+  <img id="coverImg" alt="Foto Annisa dan Faraz" class="absolute inset-0 h-full w-full object-cover">
+  <div class="absolute inset-0 bg-gradient-to-b from-ink/75 via-ink/60 to-ink/95"></div>
+  <div class="pointer-events-none absolute inset-3 border border-gold/40"></div>
+  <div id="coverCorners" class="pointer-events-none absolute inset-3"></div>
+
+  <div class="relative flex h-full flex-col items-center justify-center px-8 text-center">
+    <p class="text-[11px] uppercase tracking-[.5em] text-gold/90">The Wedding Of</p>
+    <h1 id="coverNames" class="gold-text mt-5 font-display text-[42px] leading-[1.1]"></h1>
+    <p id="coverDate" class="mt-4 text-[13px] uppercase tracking-[.3em] text-cream/80"></p>
+    <div id="coverOrn" class="mt-6 w-56"></div>
+
+    <div class="deco-frame mt-10 px-7 py-4">
+      <p class="text-[10px] uppercase tracking-[.34em] text-muted">Kepada Yth.</p>
+      <p id="guestName" class="mt-1.5 font-display text-[19px] text-goldlight"></p>
+      <p class="mt-1 text-[12px] text-muted">Bapak/Ibu/Saudara/i</p>
+    </div>
+
+    <button id="openBtn" class="gold-btn mt-10 px-10 py-3.5 text-[12px] font-semibold uppercase">Buka Undangan</button>
+  </div>
+
+  <p id="coverFoot" class="absolute bottom-7 left-0 right-0 text-center text-[11px] uppercase tracking-[.3em] text-cream/50"></p>
+</div>
+
+<!-- ================= BOTTOM NAVIGATION ================= -->
+<nav id="bottomnav" class="nav-hide rounded-2xl" aria-label="Navigasi undangan">
+  <ul id="navList" class="flex items-stretch"></ul>
+</nav>
+
+<!-- ================= TOMBOL MUSIK MUTE/UNMUTE ================= -->
+<button id="musicBtn" class="nav-hide fixed right-3 bottom-[86px] z-[70] h-11 w-11 rounded-full border border-gold/30 bg-ink/85 text-gold backdrop-blur-md" aria-label="Matikan musik">
+  <span id="icOn"></span><span id="icOff" class="gone"></span>
+</button>
+
+<!-- ================= LIGHTBOX GALERI ================= -->
+<div id="lightbox" class="gone fixed inset-0 z-[80] bg-black/95 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label="Pratinjau foto galeri">
+  <button id="lbClose" class="lb-btn absolute right-3.5 top-3.5 z-10" aria-label="Tutup"></button>
+  <button id="lbPrev" class="lb-btn absolute left-3 top-1/2 z-10 -translate-y-1/2" aria-label="Foto sebelumnya"></button>
+  <button id="lbNext" class="lb-btn absolute right-3 top-1/2 z-10 -translate-y-1/2" aria-label="Foto berikutnya"></button>
+  <figure class="flex h-full flex-col items-center justify-center gap-4 px-12">
+    <img id="lbImg" class="max-h-[72vh] w-auto max-w-full border border-gold/30" alt="">
+    <figcaption id="lbCap" class="text-center text-[13px] uppercase tracking-[.18em] text-muted"></figcaption>
+  </figure>
+</div>
+
+<!-- ================= TOAST ================= -->
+<div id="toast" role="status" class="fixed bottom-[96px] left-0 right-0 z-[90] mx-auto w-max max-w-[85%] rounded-full border border-gold/30 bg-[#17130d]/95 px-5 py-2.5 text-[15px] text-goldlight"></div>
+
+<script>
+/* =====================================================================
+   1) DATA — SEMUA isi undangan diubah di sini (tidak ada di-hardcode)
+   ===================================================================== */
+const DATA = {
+  guestDefault: "Tamu Undangan",
+  music: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3", // placeholder — ganti dengan MP3 milikmu
+
+  couple: {
+    coverPhoto: "https://picsum.photos/seed/annisa-faraz-cover/1080/1620.jpg",
+    bride: { nick:"Annisa", full:"Annisa Rahmawati, S.Ds.", childOf:"Putri pertama dari",
+             father:"Bapak Ahmad Hassan", mother:"Ibu Siti Aminah",
+             photo:"https://picsum.photos/seed/annisa-bride/640/800.jpg", ig:"@annisa.rhmwt" },
+    groom: { nick:"Faraz", full:"Muhammad Faraz Abrar, S.T.", childOf:"Putra kedua dari",
+             father:"Bapak Hendra Wijaya", mother:"Ibu Dewi Lestari",
+             photo:"https://picsum.photos/seed/faraz-groom/640/800.jpg", ig:"@faraz.abr" }
+  },
+
+  opening: {
+    salamAr : "بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ",
+    salamId : "Dengan memohon rahmat dan ridha Allah SWT",
+    quoteAr : "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً",
+    quoteId : "“Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan dari jenismu sendiri, agar kamu merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.”",
+    quoteSource: "QS. Ar-Rum : 21",
+    greeting: "Assalamu'alaikum Warahmatullahi Wabarakatuh. Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu pada momen bahagia kami.",
+    family  : "Keluarga Besar Kedua Mempelai"
+  },
+
+  event: {
+    dateISO: "2026-11-15T08:00:00+07:00",        // acuan countdown
+    dateLabel: "Minggu, 15 November 2026",        // label hari & tanggal
+    venue: "Halaman Tujuh",
+    address: "Jl. Pahlawan Seribu No. 7, Rempoa, Tangerang Selatan, Banten 15414", // placeholder
+    mapsUrl: "https://www.google.com/maps/search/?api=1&query=Halaman+Tujuh+Tangerang+Selatan",
+    akad:    { tag:"Sesi 1", name:"Akad Nikah", time:"08.00 – 10.00 WIB",
+               start:"2026-11-15T08:00:00+07:00", end:"2026-11-15T10:00:00+07:00" },
+    resepsi: { tag:"Sesi 2", name:"Resepsi",    time:"11.00 – 14.00 WIB",
+               start:"2026-11-15T11:00:00+07:00", end:"2026-11-15T14:00:00+07:00" }
+  },
+
+  story: [
+    { year:"2019", title:"Awal Bertemu",
+      text:"Dipertemukan secara tak sengaja pada sebuah kegiatan sukarela di bulan Ramadhan. Obrolan singkat tentang hal-hal kecil ternyata menjadi awal dari segalanya." },
+    { year:"2022", title:"Menjalin Komitmen",
+      text:"Melewati jauh dan dekat, suka dan duka, kami sepakat untuk saling menjadi tempat pulang dan tumbuh bersama menuju tujuan yang sama." },
+    { year:"2025", title:"Lamaran & Janji",
+      text:"Di hadapan keluarga, Faraz menuangkan niat baiknya. Kini kami melangkah ke babak baru: mengikat janji suci di hadapan Allah SWT." }
+  ],
+
+  gallery: [1,2,3,4,5,6,7,8].map(n => ({
+    t: `https://picsum.photos/seed/afrz-g${n}/640/800.jpg`,
+    f: `https://picsum.photos/seed/afrz-g${n}/960/1280.jpg`,
+    alt: `Momen bersama ${n}`
+  })),
+
+  gifts: {
+    note: "Kehadiran dan doa restu Bapak/Ibu/Saudara/i adalah hadiah terindah bagi kami. Namun jika ingin memberikan tanda kasih, kami sediakan melalui:",
+    accounts: [
+      { type:"Bank",     name:"Bank BCA",       number:"1234567890",    holder:"Annisa Rahmawati" },
+      { type:"Bank",     name:"Bank Mandiri",   number:"9876543210",    holder:"Muhammad Faraz Abrar" },
+      { type:"E-Wallet", name:"GoPay / QRIS",   number:"0812-3456-7890",holder:"Annisa Rahmawati" }
+    ],
+    giftAddress: { receiver:"Annisa Rahmawati",
+      address:"Jl. Melati Indah No. 21, RT 003 RW 005, Rempoa, Tangerang Selatan, Banten 15414",
+      phone:"0812-3456-7890" }
+  },
+
+  closing: {
+    text: "Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu. Atas kehadiran serta doanya, kami ucapkan terima kasih.",
+    signoff: "Kami yang berbahagia,"
+  }
+};
+
+/* =====================================================================
+   2) Util kecil & tamu dari parameter URL ?to=Nama+Tamu
+   ===================================================================== */
+const el = id => document.getElementById(id);
+const B = DATA.couple.bride, G = DATA.couple.groom;
+
+const params = new URLSearchParams(location.search);
+const guestName = (params.get("to") || "").trim() || DATA.guestDefault;
+el("guestName").textContent = guestName;   // textContent = aman dari input URL
+document.title = `Undangan — ${B.nick} & ${G.nick}`;
+
+/* =====================================================================
+   3) Aset visual: ornamen art deco & ikon garis (SVG inline, tanpa emoji)
+   ===================================================================== */
+const ORNAMENT = `<svg viewBox="0 0 260 24" class="mx-auto h-5 w-56 text-gold" fill="none" aria-hidden="true">
+  <line x1="4" y1="12" x2="94" y2="12" stroke="currentColor" stroke-opacity=".5"/>
+  <line x1="166" y1="12" x2="256" y2="12" stroke="currentColor" stroke-opacity=".5"/>
+  <circle cx="96" cy="12" r="1.6" fill="currentColor"/><circle cx="164" cy="12" r="1.6" fill="currentColor"/>
+  <path d="M100 12q9 -9 18 0q-9 9 -18 0Z" stroke="currentColor" stroke-opacity=".65"/>
+  <path d="M142 12q9 9 18 0q-9 -9 -18 0Z" stroke="currentColor" stroke-opacity=".65"/>
+  <path d="M130 3l9 9-9 9-9-9z" fill="currentColor" fill-opacity=".9"/>
+  <path d="M130 6.5l5.5 5.5-5.5 5.5-5.5-5.5z" stroke="#0D0D0D" stroke-width="1.2"/>
+</svg>`;
+
+const CORNER = `<svg viewBox="0 0 64 64" class="h-12 w-12 text-gold" fill="none" stroke="currentColor" aria-hidden="true">
+  <path d="M1.5 62.5V22Q1.5 1.5 22 1.5H62.5" stroke-opacity=".8"/>
+  <path d="M9 62.5V25Q9 9 25 9h37.5" stroke-opacity=".38"/>
+  <rect x="17" y="17" width="8" height="8" transform="rotate(45 21 21)" fill="currentColor" stroke="none"/>
+</svg>`;
+
+const I = p => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-[18px] w-[18px]" aria-hidden="true">${p}</svg>`;
+const ICONS = {
+  home : I('<path d="M3.5 10.5 12 3.5l8.5 7"/><path d="M5.5 9.5V20h13V9.5"/><path d="M10 20v-5h4v5"/>'),
+  rings: I('<circle cx="9" cy="13.8" r="4.8"/><circle cx="15" cy="13.8" r="4.8"/><path d="M15 3.4l1.9 2.1-1.9 2.1-1.9-2.1z"/>'),
+  cal  : I('<rect x="4" y="5.5" width="16" height="15" rx="1.5"/><path d="M4 10h16"/><path d="M8 3.5v4M16 3.5v4"/>'),
+  photo: I('<rect x="4" y="5" width="16" height="14" rx="1.5"/><circle cx="9" cy="10" r="1.6"/><path d="M4 17l5-4.5 3.5 3 3-2.5 4.5 4"/>'),
+  gift : I('<rect x="4.5" y="9" width="15" height="11.5" rx="1"/><path d="M12 9v11.5M4.5 13.5h15"/><path d="M12 9c-4 0-5-1.6-5-3a1.8 1.8 0 0 1 3.4-.7C11 6.6 12 9 12 9Zm0 0c4 0 5-1.6 5-3a1.8 1.8 0 0 0-3.4-.7C13 6.6 12 9 12 9Z"/>'),
+  chat : I('<path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7a2.5 2.5 0 0 1-2.5 2.5H9l-5 4z"/>'),
+  pin  : I('<path d="M12 21s-6.5-5.4-6.5-10a6.5 6.5 0 0 1 13 0c0 4.6-6.5 10-6.5 10Z"/><circle cx="12" cy="10.5" r="2.3"/>'),
+  clock: I('<circle cx="12" cy="12" r="8"/><path d="M12 7.5V12l3 2"/>'),
+  volOn : I('<path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5z"/><path d="M15.5 9a4.2 4.2 0 0 1 0 6"/><path d="M18 6.8a7.6 7.6 0 0 1 0 10.4"/>'),
+  volOff: I('<path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5z"/><path d="M16 9.8l5 4.4M21 9.8l-5 4.4"/>'),
+  x    : I('<path d="M6 6l12 12M18 6 6 18"/>'),
+  chevL: I('<path d="M14.5 5.5 8 12l6.5 6.5"/>'),
+  chevR: I('<path d="M9.5 5.5 16 12l-6.5 6.5"/>'),
+  heart: '<svg viewBox="0 0 24 24" class="h-3 w-3" fill="currentColor" aria-hidden="true"><path d="M12 21C7 16.6 3.5 13.3 3.5 9.6A4.6 4.6 0 0 1 12 7a4.6 4.6 0 0 1 8.5 2.6c0 3.7-3.5 7-8.5 11.4Z"/></svg>'
+};
+
+/* =====================================================================
+   4) Render tiap bagian dari DATA
+   ===================================================================== */
+function head(kicker, title, sub){
+  return `<div class="rv text-center">
+    <p class="text-[11px] uppercase tracking-[.42em] text-gold/85">${kicker}</p>
+    <h2 class="gold-text mt-3 font-display text-[30px] leading-tight">${title}</h2>
+    ${ORNAMENT}
+    ${sub ? `<p class="mt-3 text-[15px] leading-relaxed text-muted">${sub}</p>` : ``}
+  </div>`;
+}
+
+/* --- Cover --- */
+(function renderCover(){
+  el("coverImg").src = DATA.couple.coverPhoto;
+  el("coverNames").innerHTML = `${B.nick} <span class="mx-1 text-[32px] text-goldlight">&amp;</span> ${G.nick}`;
+  el("coverDate").textContent = DATA.event.dateLabel;
+  el("coverFoot").textContent = `${DATA.event.venue} • ${DATA.event.dateLabel}`;
+  el("coverOrn").innerHTML = ORNAMENT;
+  const defs = [
+    ["top:-1px;left:-1px",""],["top:-1px;right:-1px","rotate-90"],
+    ["bottom:-1px;right:-1px","rotate-180"],["bottom:-1px;left:-1px","-rotate-90"]
+  ];
+  el("coverCorners").innerHTML = defs.map(([pos,rot]) =>
+    `<span class="absolute h-12 w-12 ${rot}" style="${pos}">${CORNER}</span>`).join("");
+})();
+
+/* --- 2) Salam pembuka + Ar-Rum:21 + sambutan --- */
+el("beranda").innerHTML = `
+  <div class="rv text-center">
+    <p class="font-arab text-[22px] leading-relaxed text-goldlight">${DATA.opening.salamAr}</p>
+    <p class="mt-2 text-[12px] uppercase tracking-[.28em] text-muted">${DATA.opening.salamId}</p>
+  </div>
+  <figure class="rv deco-frame mt-10 px-6 py-7 text-center" style="transition-delay:.08s">
+    <p class="font-arab text-[19px] leading-[2] text-cream/90">${DATA.opening.quoteAr}</p>
+    <p class="mt-5 text-[15px] italic leading-relaxed text-cream/75">${DATA.opening.quoteId}</p>
+    <figcaption class="mt-4 text-[11px] uppercase tracking-[.3em] text-gold">${DATA.opening.quoteSource}</figcaption>
+  </figure>
+  <div class="rv mt-10 text-center" style="transition-delay:.12s">
+    <p class="text-[15px] leading-relaxed text-cream/80">${DATA.opening.greeting}</p>
+    <p class="mt-5 font-display text-[17px] tracking-wide text-goldlight">${DATA.opening.family}</p>
+  </div>`;
+
+/* --- 3) Profil mempelai --- */
+function profileCard(p, delay){
+  return `<article class="rv deco-frame bg-white/[.015] p-5" style="transition-delay:${delay}s">
+    <div class="relative overflow-hidden border border-gold/25">
+      <img src="${p.photo}" alt="Foto ${p.nick}" loading="lazy" class="h-64 w-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent"></div>
+    </div>
+    <h3 class="gold-text mt-5 text-center font-display text-[30px]">${p.nick}</h3>
+    <p class="mt-1.5 text-center text-[15px] text-cream/85">${p.full}</p>
+    <div class="mx-auto mt-4 h-px w-16 bg-gold/40"></div>
+    <p class="mt-4 text-center text-[13px] uppercase tracking-[.18em] text-muted">${p.childOf} :</p>
+    <p class="mt-1 text-center text-[15px] text-cream/85">${p.father}</p>
+    <p class="text-center text-[15px] text-cream/85">&amp; ${p.mother}</p>
+    <a href="https://instagram.com/${p.ig.replace("@","")}" target="_blank" rel="noopener"
+       class="mt-4 block text-center text-[13px] tracking-[.12em] text-gold/90 hover:text-goldlight">${p.ig}</a>
+  </article>`;
+}
+el("mempelai").innerHTML = head("Bride & Groom", "Mempelai")
+  + profileCard(B, .05)
+  + `<div class="rv my-7 text-center"><span class="gold-text font-display text-[36px]">&amp;</span></div>`
+  + profileCard(G, .1);
+
+/* --- 4) Countdown + 5) Detail acara --- */
+const EVENTS = [DATA.event.akad, DATA.event.resepsi].map(e => ({
+  ...e, place: DATA.event.venue, address: DATA.event.address, mapsUrl: DATA.event.mapsUrl
+}));
+
+function eventCard(e, i){
+  const day = DATA.event.dateLabel.split(",")[0];
+  return `<article class="rv deco-frame mt-6 bg-white/[.015] p-6" style="transition-delay:${i * .08}s">
+    <p class="text-center text-[11px] uppercase tracking-[.4em] text-gold/85">${e.tag}</p>
+    <h3 class="mt-2 text-center font-display text-[24px] text-cream">${e.name}</h3>
+    <div class="mx-auto mt-4 h-px w-14 bg-gold/40"></div>
+    <ul class="mt-5 space-y-4 text-[15px]">
+      <li class="flex items-start gap-3">
+        <span class="mt-0.5 shrink-0 text-gold">${ICONS.clock}</span>
+        <span><span class="block text-[11px] uppercase tracking-[.2em] text-muted">Waktu</span>${day}, ${e.time}</span>
+      </li>
+      <li class="flex items-start gap-3">
+        <span class="mt-0.5 shrink-0 text-gold">${ICONS.pin}</span>
+        <span><span class="block text-[11px] uppercase tracking-[.2em] text-muted">Tempat</span>
+          <span class="font-medium text-goldlight">${e.place}</span>
+          <span class="mt-0.5 block text-[14px] leading-relaxed text-cream/75">${e.address}</span></span>
+      </li>
+    </ul>
+    <div class="mt-6 grid grid-cols-2 gap-2.5">
+      <a href="${e.mapsUrl}" target="_blank" rel="noopener"
+         class="ghost-btn flex items-center justify-center gap-2 px-2 py-3 text-center text-[11px] font-semibold uppercase">${ICONS.pin} Maps</a>
+      <button type="button" data-ics="${i}"
+         class="ghost-btn flex items-center justify-center gap-2 px-2 py-3 text-center text-[11px] font-semibold uppercase">${ICONS.cal} Kalender</button>
+    </div>
+  </article>`;
+}
+
+el("acara").innerHTML = head("Save The Date", "Waktu &amp; Tempat")
+  + `<div class="rv deco-frame mt-10 px-4 py-6 text-center" style="transition-delay:.06s">
+      <p class="text-[13px] uppercase tracking-[.22em] text-cream/80">Menuju Hari Bahagia</p>
+      <p class="mt-1.5 font-display text-[16px] tracking-[.14em] text-goldlight">${DATA.event.dateLabel}</p>
+      <div id="cdGrid" class="mt-5 grid grid-cols-4 gap-2.5">
+        ${["Hari","Jam","Menit","Detik"].map((l,i)=>`
+          <div class="border border-gold/25 bg-white/[.02] py-3">
+            <p id="cd-${["d","h","m","s"][i]}" class="gold-text font-display text-[26px] leading-none">00</p>
+            <p class="mt-1.5 text-[10px] uppercase tracking-[.22em] text-muted">${l}</p>
+          </div>`).join("")}
+      </div>
+      <p id="cdDone" class="gone mt-3 text-[15px] leading-relaxed text-goldlight"></p>
+    </div>`
+  + EVENTS.map(eventCard).join("");
+
+/* --- 6) Love story (timeline) --- */
+el("cerita").innerHTML = head("Our Journey", "Kisah Kami")
+  + `<div class="mt-10">${DATA.story.map((s,i)=>`
+      <div class="rv tl-item" style="transition-delay:${i * .08}s">
+        <p class="gold-text font-display text-[20px] tracking-[.08em]">${s.year}</p>
+        <h3 class="mt-1 text-[16px] font-semibold tracking-wide text-cream">${s.title}</h3>
+        <p class="mt-2 text-[15px] leading-relaxed text-cream/75">${s.text}</p>
+      </div>`).join("")}</div>`;
+
+/* --- 7) Galeri + lightbox --- */
+el("galeri").innerHTML = head("Moments", "Galeri")
+  + `<div class="mt-10 grid grid-cols-2 gap-2.5">${DATA.gallery.map((g,i)=>`
+      <button type="button" data-gal="${i}" aria-label="Lihat foto ${i+1}"
+        class="rv group relative overflow-hidden border border-gold/25 ${i===0 ? "col-span-2 h-52" : "aspect-[3/4]"}"
+        style="transition-delay:${Math.min(i * .06, .3)}s">
+        <img src="${g.t}" alt="${g.alt}" loading="lazy"
+             class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <span class="pointer-events-none absolute inset-0 bg-ink/15 transition-colors duration-500 group-hover:bg-ink/0"></span>
+      </button>`).join("")}</div>`;
+
+/* --- 8) Amplop digital --- */
+el("hadiah").innerHTML = head("Wedding Gift", "Amplop Digital", DATA.gifts.note)
+  + `<div class="mt-10 space-y-4">${DATA.gifts.accounts.map((a,i)=>`
+      <article class="rv deco-frame p-5" style="transition-delay:${i * .06}s">
+        <p class="text-[10px] uppercase tracking-[.34em] text-muted">${a.type}</p>
+        <h3 class="mt-1 font-display text-[19px] text-goldlight">${a.name}</h3>
+        <p class="mt-2.5 font-display text-[20px] tracking-[.14em] text-cream">${a.number}</p>
+        <p class="mt-1 text-[13px] text-cream/70">a.n. ${a.holder}</p>
+        <button type="button" data-copy="acc:${i}"
+          class="ghost-btn mt-4 w-full py-2.5 text-[11px] font-semibold uppercase tracking-[.18em]">Salin Nomor</button>
+      </article>`).join("")}
+    </div>
+    <article class="rv deco-frame mt-4 p-5" style="transition-delay:.1s">
+      <p class="text-[10px] uppercase tracking-[.34em] text-muted">Kirim Hadiah</p>
+      <p class="mt-2 text-[15px] text-cream/85">${DATA.gifts.giftAddress.receiver}</p>
+      <p class="mt-1 text-[14px] leading-relaxed text-cream/70">${DATA.gifts.giftAddress.address}</p>
+      <p class="mt-1 text-[14px] text-cream/70">Telp/WA: ${DATA.gifts.giftAddress.phone}</p>
+      <button type="button" data-copy="addr"
+        class="ghost-btn mt-4 w-full py-2.5 text-[11px] font-semibold uppercase tracking-[.18em]">Salin Alamat</button>
+    </article>`;
+
+/* --- 9) RSVP + ucapan --- */
+el("ucapan").innerHTML = head("RSVP &amp; Wishes", "Ucapan &amp; Doa")
+  + `<form id="rsvpForm" class="rv deco-frame mt-10 space-y-5 p-6" novalidate style="transition-delay:.06s">
+      <div>
+        <label for="fName" class="text-[11px] uppercase tracking-[.26em] text-gold/85">Nama</label>
+        <input id="fName" class="field mt-2" type="text" maxlength="40" placeholder="Nama Anda" autocomplete="name">
+      </div>
+      <div>
+        <span class="text-[11px] uppercase tracking-[.26em] text-gold/85">Kehadiran</span>
+        <div class="mt-2 grid grid-cols-2 gap-2.5" role="group" aria-label="Konfirmasi kehadiran">
+          <button type="button" data-attend="hadir" class="attend-opt sel">Insya Allah Hadir</button>
+          <button type="button" data-attend="berhalangan" class="attend-opt">Berhalangan</button>
+        </div>
+      </div>
+      <div>
+        <label for="fGuests" class="text-[11px] uppercase tracking-[.26em] text-gold/85">Jumlah Tamu</label>
+        <select id="fGuests" class="field mt-2">
+          ${[1,2,3,4,5].map(n=>`<option value="${n}">${n} orang</option>`).join("")}
+        </select>
+      </div>
+      <div>
+        <label for="fMsg" class="text-[11px] uppercase tracking-[.26em] text-gold/85">Ucapan &amp; Doa</label>
+        <textarea id="fMsg" rows="4" maxlength="300" class="field mt-2 resize-none" placeholder="Tuliskan ucapan dan doa terbaik Anda..."></textarea>
+      </div>
+      <p id="formErr" class="gone text-[13px] text-[#E08A8A]"></p>
+      <button type="submit" class="gold-btn w-full py-3.5 text-[12px] font-semibold uppercase tracking-[.2em]">Kirim Ucapan</button>
+    </form>
+    <div id="wishStats" class="rv mt-8 text-center text-[13px] uppercase tracking-[.2em] text-muted"></div>
+    <ul id="wishList" class="mt-4 space-y-3"></ul>`;
+
+/* --- 10) Penutup + footer --- */
+el("penutup").innerHTML = `
+  <div class="rv text-center">
+    ${ORNAMENT}
+    <p class="mt-6 text-[15px] leading-relaxed text-cream/80">${DATA.closing.text}</p>
+    <p class="mt-7 text-[12px] uppercase tracking-[.3em] text-muted">${DATA.closing.signoff}</p>
+    <p class="gold-text mt-3 font-display text-[30px] leading-tight">${B.nick} &amp; ${G.nick}</p>
+    <p class="mt-2 text-[13px] text-muted">beserta keluarga besar</p>
+  </div>`;
+document.querySelector("footer").innerHTML = `
+  <div class="mx-auto h-px w-24 bg-gold/30"></div>
+  <p class="mt-4 text-[12px] uppercase tracking-[.22em] text-muted">The Wedding of ${B.nick} &amp; ${G.nick} • ${new Date().getFullYear()}</p>
+  <p class="mt-2 flex items-center justify-center gap-1.5 text-[12px] text-muted">Dibuat dengan ${ICONS.heart} <span class="text-goldlight">Ahira</span></p>`;
+
+/* --- 11) Bottom navigation --- */
+const NAV = [
+  ["beranda","Beranda","home"], ["mempelai","Mempelai","rings"], ["acara","Acara","cal"],
+  ["galeri","Galeri","photo"], ["hadiah","Hadiah","gift"], ["ucapan","Ucapan","chat"]
+];
+el("navList").innerHTML = NAV.map(([id,label,ic])=>`
+  <li class="flex-1">
+    <a href="#${id}" data-nav="${id}" class="nav-link flex flex-col items-center gap-1 py-2.5">
+      ${ICONS[ic]}<span class="text-[10px] uppercase tracking-[.12em]">${label}</span>
+    </a>
+  </li>`).join("");
+
+/* Ikon statis pada elemen fungsional */
+el("icOn").innerHTML = ICONS.volOn; el("icOff").innerHTML = ICONS.volOff;
+el("lbClose").innerHTML = ICONS.x; el("lbPrev").innerHTML = ICONS.chevL; el("lbNext").innerHTML = ICONS.chevR;
+
+/* =====================================================================
+   5) Toast
+   ===================================================================== */
+let toastTimer;
+function toast(msg){
+  const t = el("toast");
+  t.textContent = msg;                     // textContent, bukan innerHTML
+  t.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>t.classList.remove("show"), 2300);
+}
+
+/* =====================================================================
+   6) Salin ke clipboard (dengan fallback) — toast "Berhasil disalin"
+   ===================================================================== */
+async function copyText(txt){
+  try { await navigator.clipboard.writeText(txt); return true; }
+  catch(e){
+    try {
+      const ta = document.createElement("textarea");
+      ta.value = txt; ta.style.cssText = "position:fixed;opacity:0";
+      document.body.appendChild(ta); ta.select();
+      const ok = document.execCommand("copy"); ta.remove(); return ok;
+    } catch(e2){ return false; }
+  }
+}
+document.addEventListener("click", async ev=>{
+  const b = ev.target.closest("[data-copy]");
+  if(!b) return;
+  const key = b.dataset.copy;
+  let txt = "";
+  if(key === "addr"){
+    const g = DATA.gifts.giftAddress;
+    txt = `${g.receiver}\n${g.address}\nTelp/WA: ${g.phone}`;
+  } else if(key.startsWith("acc:")){
+    txt = DATA.gifts.accounts[+key.slice(4)].number;
+  }
+  toast((await copyText(txt)) ? "Berhasil disalin" : "Gagal menyalin — salin manual ya");
+});
+
+/* =====================================================================
+   7) Simpan ke Kalender (.ics dibuat lokal via Blob)
+   ===================================================================== */
+const icsDate = iso => new Date(iso).toISOString().replace(/[-:]/g,"").split(".")[0] + "Z";
+const icsEsc  = s => s.replace(/([,;])/g,"\\$1");
+function downloadICS(e){
+  const stamp = new Date().toISOString().replace(/[-:]/g,"").split(".")[0] + "Z";
+  const lines = ["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Undangan Annisa Faraz//ID","BEGIN:VEVENT",
+    `UID:afrz-${icsDate(e.start)}-${e.name.replace(/\s+/g,"")}`,
+    `DTSTAMP:${stamp}`,`DTSTART:${icsDate(e.start)}`,`DTEND:${icsDate(e.end)}`,
+    `SUMMARY:${icsEsc(`${e.name} — ${B.nick} & ${G.nick}`)}`,
+    `LOCATION:${icsEsc(`${e.place}, ${e.address}`)}`,
+    `DESCRIPTION:${icsEsc(`Undangan pernikahan • ${DATA.event.dateLabel} • ${e.time}`)}`,
+    "END:VEVENT","END:VCALENDAR"];
+  const url = URL.createObjectURL(new Blob([lines.join("\r\n")], {type:"text/calendar;charset=utf-8"}));
+  const a = document.createElement("a");
+  a.href = url; a.download = "undangan-annisa-faraz.ics";
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url), 4000);
+  toast("File kalender diunduh — buka untuk menambahkan acara");
+}
+document.addEventListener("click", ev=>{
+  const b = ev.target.closest("[data-ics]");
+  if(b) downloadICS(EVENTS[+b.dataset.ics]);
+});
+
+/* =====================================================================
+   8) Countdown menuju hari H
+   ===================================================================== */
+(function countdown(){
+  const target = new Date(DATA.event.dateISO).getTime();
+  const E = { d:el("cd-d"), h:el("cd-h"), m:el("cd-m"), s:el("cd-s") };
+  function tick(){
+    const ms = target - Date.now();
+    if(ms <= 0){
+      el("cdGrid").classList.add("gone");
+      const done = el("cdDone");
+      done.textContent = "Insya Allah, hari bahagia telah tiba. Terima kasih atas doa dan restunya.";
+      done.classList.remove("gone");
+      return;
+    }
+    const s = Math.floor(ms / 1000);
+    E.d.textContent = Math.floor(s / 86400);
+    E.h.textContent = String(Math.floor(s/3600) % 24).padStart(2,"0");
+    E.m.textContent = String(Math.floor(s/60) % 60).padStart(2,"0");
+    E.s.textContent = String(s % 60).padStart(2,"0");
+  }
+  tick(); setInterval(tick, 1000);
+})();
+
+/* =====================================================================
+   9) Lightbox galeri
+   ===================================================================== */
+const lb = el("lightbox"), lbImg = el("lbImg"), lbCap = el("lbCap");
+let lbI = 0;
+function updateLB(){
+  const g = DATA.gallery[lbI];
+  lbImg.src = g.f; lbImg.alt = g.alt;
+  lbCap.textContent = `${lbI+1} / ${DATA.gallery.length} — ${g.alt}`;
+}
+function openLB(i){ lbI = i; updateLB(); lb.classList.remove("gone"); document.documentElement.classList.add("lock"); }
+function closeLB(){ lb.classList.add("gone"); document.documentElement.classList.remove("lock"); }
+function stepLB(d){ lbI = (lbI + d + DATA.gallery.length) % DATA.gallery.length; updateLB(); }
+document.addEventListener("click", ev=>{
+  const b = ev.target.closest("[data-gal]");
+  if(b) openLB(+b.dataset.gal);
+});
+el("lbClose").addEventListener("click", closeLB);
+el("lbPrev").addEventListener("click", ()=>stepLB(-1));
+el("lbNext").addEventListener("click", ()=>stepLB(1));
+lb.addEventListener("click", e=>{ if(e.target === lb) closeLB(); });
+document.addEventListener("keydown", e=>{
+  if(lb.classList.contains("gone")) return;
+  if(e.key === "Escape") closeLB();
+  if(e.key === "ArrowLeft") stepLB(-1);
+  if(e.key === "ArrowRight") stepLB(1);
+});
+
+/* =====================================================================
+   10) RSVP + ucapan (localStorage dengan try/catch)
+   ===================================================================== */
+const WKEY = "afrz_wishes_v1";
+let attendState = "hadir";
+
+function loadWishes(){
+  try { const a = JSON.parse(localStorage.getItem(WKEY) || "[]"); return Array.isArray(a) ? a : []; }
+  catch(e){ return []; }
+}
+function saveWishes(arr){
+  try { localStorage.setItem(WKEY, JSON.stringify(arr)); return true; }
+  catch(e){ toast("Penyimpanan tidak tersedia di browser ini"); return false; }
+}
+function fmtTime(t){
+  try { return new Date(t).toLocaleString("id-ID",{day:"numeric",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit"}); }
+  catch(e){ return ""; }
+}
+function renderWishes(){
+  const arr = loadWishes();
+  const list = el("wishList");
+  list.innerHTML = "";
+  const hadir = arr.filter(w => w.attend === "hadir").length;
+  el("wishStats").textContent = `${arr.length} ucapan • ${hadir} konfirmasi hadir`;
+
+  arr.forEach(w=>{
+    const li = document.createElement("li");
+    li.className = "rv deco-frame flex gap-3.5 bg-white/[.015] p-4";
+
+    const av = document.createElement("span");
+    av.className = "mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center border border-gold/45 font-display text-[15px] text-goldlight";
+    av.textContent = (w.name || "T").trim().charAt(0).toUpperCase() || "T";
+
+    const body = document.createElement("div"); body.className = "min-w-0 flex-1";
+    const top  = document.createElement("div"); top.className = "flex flex-wrap items-center gap-x-2.5 gap-y-1";
+
+    const nm = document.createElement("p"); nm.className = "text-[15px] font-medium text-cream"; nm.textContent = w.name;
+    const bd = document.createElement("span");
+    bd.className = "badge " + (w.attend === "hadir" ? "badge-in" : "badge-out");
+    bd.textContent = w.attend === "hadir" ? (w.guests > 1 ? `Hadir • ${w.guests} tamu` : "Hadir") : "Berhalangan";
+    const tm = document.createElement("span"); tm.className = "ml-auto text-[12px] text-muted"; tm.textContent = fmtTime(w.time);
+    top.append(nm, bd, tm);
+
+    const ms = document.createElement("p");
+    ms.className = "mt-1.5 break-words text-[15px] leading-relaxed text-cream/80";
+    ms.textContent = w.msg;
+    body.append(top, ms);
+    li.append(av, body);
+    list.appendChild(li);
+  });
+  watchRv();
+}
+document.querySelectorAll(".attend-opt").forEach(b=>{
+  b.addEventListener("click", ()=>{
+    attendState = b.dataset.attend;
+    document.querySelectorAll(".attend-opt").forEach(x=>x.classList.toggle("sel", x === b));
+    const sel = el("fGuests");
+    sel.disabled = attendState !== "hadir";
+    sel.style.opacity = attendState === "hadir" ? "1" : ".45";
+  });
+});
+el("rsvpForm").addEventListener("submit", e=>{
+  e.preventDefault();
+  const name = el("fName").value.trim(), msg = el("fMsg").value.trim(), err = el("formErr");
+  if(!name || !msg){
+    err.textContent = "Mohon isi nama dan ucapan terlebih dahulu.";
+    err.classList.remove("gone"); return;
+  }
+  err.classList.add("gone");
+  const wish = { id:Date.now(), name, attend:attendState,
+                 guests: attendState === "hadir" ? parseInt(el("fGuests").value,10) || 1 : 0,
+                 msg, time:Date.now() };
+  const arr = loadWishes(); arr.unshift(wish);
+  if(saveWishes(arr)){
+    renderWishes();
+    el("fMsg").value = "";                       // nama tetap terisi untuk koreksi cepat
+    toast("Terima kasih, ucapan Anda telah tersimpan");
+  }
+});
+el("fName").value = guestName;                   // prefill dari ?to=
+renderWishes();
+
+/* =====================================================================
+   11) Reveal saat masuk viewport (IntersectionObserver)
+   ===================================================================== */
+const rvIO = new IntersectionObserver(es=>es.forEach(x=>{
+  if(x.isIntersecting){ x.target.classList.add("in"); rvIO.unobserve(x.target); }
+}), { threshold:.12, rootMargin:"0px 0px -6% 0px" });
+function watchRv(scope = document){
+  scope.querySelectorAll(".rv:not(.in)").forEach(n=>rvIO.observe(n));
+}
+watchRv();
+
+/* =====================================================================
+   12) Highlight nav aktif
+   ===================================================================== */
+const navLinks = Object.fromEntries(NAV.map(([id])=>[id, document.querySelector(`[data-nav="${id}"]`)]));
+const secIO = new IntersectionObserver(es=>es.forEach(x=>{
+  if(x.isIntersecting && navLinks[x.target.id]){
+    Object.values(navLinks).forEach(a=>a.classList.remove("active"));
+    navLinks[x.target.id].classList.add("active");
+  }
+}), { rootMargin:"-42% 0px -52% 0px", threshold:0 });
+NAV.forEach(([id])=>secIO.observe(el(id)));
+navLinks.beranda.classList.add("active");
+
+/* =====================================================================
+   13) Musik latar: play saat cover dibuka, mute/unmute,
+       tombol disembunyikan otomatis jika audio gagal dimuat
+   ===================================================================== */
+let audio = null;
+function initAudio(){
+  try {
+    audio = new Audio(DATA.music);
+    audio.loop = true; audio.volume = .55; audio.preload = "auto";
+    audio.addEventListener("error", ()=>el("musicBtn").classList.add("gone"), { once:true });
+  } catch(e){ el("musicBtn").classList.add("gone"); }
+}
+async function startAudio(){
+  if(!audio) return;
+  try { await audio.play(); }
+  catch(e){
+    // selain blokir autoplay → dianggap gagal, sembunyikan tombol musik
+    if(!e || e.name !== "NotAllowedError") el("musicBtn").classList.add("gone");
+  }
+}
+el("musicBtn").addEventListener("click", ()=>{
+  if(!audio || el("musicBtn").classList.contains("gone")) return;
+  if(audio.paused){ audio.play().catch(()=>el("musicBtn").classList.add("gone")); return; }
+  audio.muted = !audio.muted;
+  el("icOn").classList.toggle("gone", audio.muted);
+  el("icOff").classList.toggle("gone", !audio.muted);
+  el("musicBtn").setAttribute("aria-label", audio.muted ? "Nyalakan musik" : "Matikan musik");
+});
+
+/* =====================================================================
+   14) Cover: scroll dikunci → buka undangan (geser keluar + musik play)
+   ===================================================================== */
+el("openBtn").addEventListener("click", ()=>{
+  const c = el("cover");
+  if(c.classList.contains("open")) return;
+  c.classList.add("open");
+  document.documentElement.classList.remove("lock");   // buka kunci scroll
+  initAudio(); startAudio();                            // gesture pengguna → aman
+  el("bottomnav").classList.remove("nav-hide");
+  el("musicBtn").classList.remove("nav-hide");
+  window.scrollTo(0, 0);
+  setTimeout(()=>c.classList.add("gone"), 1050);        // bersihkan setelah transisi
+});
+</script>
+</body>
+</html><!DOCTYPE html>
+<html lang="id" class="lock">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Undangan — Annisa &amp; Faraz</title>
+<meta name="description" content="Undangan pernikahan Annisa & Faraz — Halaman Tujuh, Tangerang Selatan.">
+
+<!-- ===== Fonts: Cinzel (display) + Montserrat (isi) + Amiri (teks Arab) ===== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- ===== Tailwind CDN ===== -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { theme: { extend: {
+  colors: { ink:'#0D0D0D', gold:'#C9A45C', goldlight:'#F0DFAC', golddark:'#8A6A2C', cream:'#EFE8D8', muted:'#A79C87' },
+  fontFamily: { sans:['Montserrat','sans-serif'], display:['Cinzel','serif'], arab:['Amiri','serif'] }
+}}};
+</script>
+
+<style>
+/* ============ Dasar ============ */
+html{scroll-behavior:smooth}
+html.lock, html.lock body{overflow:hidden!important;height:100%}
+body{background:radial-gradient(1100px 520px at 50% -8%, rgba(201,164,92,.08), transparent 62%), #0D0D0D}
+::selection{background:rgba(201,164,92,.35);color:#fff}
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-thumb{background:#2a241a;border-radius:8px;border:2px solid #0D0D0D}
+.gone{display:none!important}
+
+/* ============ Teks emas metalik dengan kilau berjalan halus ============ */
+.gold-text{
+  background-image:linear-gradient(110deg,#8a6a2c 0%,#e9d296 22%,#c9a45c 42%,#f7ecc6 58%,#c9a45c 74%,#8a6a2c 100%);
+  background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:goldShift 8s linear infinite;
+}
+@keyframes goldShift{0%{background-position:0% center}100%{background-position:-220% center}}
+@supports not (-webkit-background-clip:text){ .gold-text{color:#C9A45C;background:none} }
+
+/* ============ Bingkai art deco (garis ganda tipis) ============ */
+.deco-frame{position:relative;border:1px solid rgba(201,164,92,.35)}
+.deco-frame::before{content:"";position:absolute;inset:6px;border:1px solid rgba(201,164,92,.16);pointer-events:none}
+
+/* ============ Tombol emas + kilau sheen ============ */
+.gold-btn{position:relative;overflow:hidden;letter-spacing:.16em;
+  background:linear-gradient(135deg,#a97f35 0%,#e9d296 40%,#c9a45c 55%,#f3e3b0 75%,#b38940 100%);color:#191203}
+.gold-btn::after{content:"";position:absolute;top:-20%;bottom:-20%;left:-70%;width:45%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);
+  transform:skewX(-18deg);animation:sheen 3.8s ease-in-out infinite}
+@keyframes sheen{0%,55%{left:-70%}90%,100%{left:140%}}
+.ghost-btn{border:1px solid rgba(201,164,92,.45);color:#EAD9A6;letter-spacing:.14em;transition:background .3s,border-color .3s}
+.ghost-btn:hover{background:rgba(201,164,92,.12)}
+
+/* ============ Reveal saat masuk viewport ============ */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s cubic-bezier(.22,.61,.36,1)}
+.rv.in{opacity:1;transform:translateY(0)}
+
+/* ============ Cover ============ */
+#cover{transition:transform 1s cubic-bezier(.77,0,.18,1),opacity 1s ease}
+#cover.open{transform:translateY(-102%);opacity:.98}
+
+/* ============ Bottom nav & tombol musik melayang ============ */
+#bottomnav{position:fixed;bottom:12px;left:0;right:0;margin-inline:auto;width:calc(100% - 20px);max-width:460px;z-index:70;
+  background:rgba(13,13,13,.9);border:1px solid rgba(201,164,92,.28);backdrop-filter:blur(12px);
+  transition:opacity .5s ease .2s,transform .5s ease .2s}
+#musicBtn{transition:opacity .5s ease .35s,transform .5s ease .35s;display:flex;align-items:center;justify-content:center}
+.nav-hide{opacity:0;pointer-events:none;transform:translateY(16px)}
+.nav-link{position:relative;color:#9C917C;transition:color .3s}
+.nav-link::after{content:"";position:absolute;top:-1px;left:50%;width:20px;height:1px;
+  background:linear-gradient(90deg,transparent,#F0DFAC,transparent);
+  transform:translateX(-50%) scaleX(0);transition:transform .35s}
+.nav-link.active{color:#EFD9A0}
+.nav-link.active::after{transform:translateX(-50%) scaleX(1)}
+
+/* ============ Form ============ */
+.field{width:100%;background:rgba(255,255,255,.02);border:1px solid rgba(201,164,92,.28);
+  padding:.8rem 1rem;font-size:15px;color:#EFE8D8;outline:none;transition:border-color .3s}
+.field::placeholder{color:rgba(239,232,216,.4)}
+.field:focus{border-color:rgba(201,164,92,.8)}
+select.field option{background:#141008;color:#EFE8D8}
+.attend-opt{border:1px solid rgba(201,164,92,.3);padding:.75rem .5rem;font-size:12px;letter-spacing:.14em;
+  text-transform:uppercase;color:#A79C87;transition:all .3s}
+.attend-opt.sel{border-color:rgba(201,164,92,.9);background:rgba(201,164,92,.12);color:#F0DFAC}
+.badge{border:1px solid;padding:.15rem .5rem;font-size:10px;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}
+.badge-in{border-color:rgba(201,164,92,.6);color:#EFD9A0}
+.badge-out{border-color:rgba(239,232,216,.25);color:#9C917C}
+
+/* ============ Timeline love story (diamond node) ============ */
+.tl-item{position:relative;padding-left:36px;padding-bottom:30px}
+.tl-item::before{content:"";position:absolute;left:10px;top:12px;bottom:-4px;width:1px;background:rgba(201,164,92,.4)}
+.tl-item:last-child::before{display:none}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::after{content:"";position:absolute;left:6px;top:7px;width:9px;height:9px;
+  border:1px solid #C9A45C;transform:rotate(45deg);background:#0D0D0D}
+
+/* ============ Lightbox & toast ============ */
+.lb-btn{height:2.5rem;width:2.5rem;border-radius:9999px;border:1px solid rgba(201,164,92,.4);
+  background:rgba(13,13,13,.7);color:#C9A45C;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px)}
+#toast{opacity:0;transform:translateY(10px);transition:opacity .3s,transform .3s;pointer-events:none}
+#toast.show{opacity:1;transform:translateY(0)}
+
+/* ============ Hormati prefers-reduced-motion ============ */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .rv{opacity:1!important;transform:none!important}
+  .gold-btn::after{display:none}
+}
+</style>
+</head>
+
+<body class="bg-ink text-cream antialiased">
+
+<!-- ================= KONTEN UTAMA (desktop: kolom tengah max 480px) ================= -->
+<div class="relative mx-auto min-h-screen w-full max-w-[480px] border-x border-gold/15">
+  <main id="main" class="pb-36">
+    <section id="beranda"  class="px-6 pt-16"></section>
+    <section id="mempelai" class="px-6 pt-20"></section>
+    <section id="acara"    class="px-6 pt-20"></section>
+    <section id="cerita"   class="px-6 pt-20"></section>
+    <section id="galeri"   class="px-6 pt-20"></section>
+    <section id="hadiah"   class="px-6 pt-20"></section>
+    <section id="ucapan"   class="px-6 pt-20"></section>
+    <section id="penutup"  class="px-6 pt-20"></section>
+    <footer class="px-6 pb-6 pt-12 text-center"></footer>
+  </main>
+</div>
+
+<!-- ================= COVER LAYAR PENUH ================= -->
+<div id="cover" class="fixed inset-0 z-[60] mx-auto w-full max-w-[480px] overflow-hidden bg-ink">
+  <img id="coverImg" alt="Foto Annisa dan Faraz" class="absolute inset-0 h-full w-full object-cover">
+  <div class="absolute inset-0 bg-gradient-to-b from-ink/75 via-ink/60 to-ink/95"></div>
+  <div class="pointer-events-none absolute inset-3 border border-gold/40"></div>
+  <div id="coverCorners" class="pointer-events-none absolute inset-3"></div>
+
+  <div class="relative flex h-full flex-col items-center justify-center px-8 text-center">
+    <p class="text-[11px] uppercase tracking-[.5em] text-gold/90">The Wedding Of</p>
+    <h1 id="coverNames" class="gold-text mt-5 font-display text-[42px] leading-[1.1]"></h1>
+    <p id="coverDate" class="mt-4 text-[13px] uppercase tracking-[.3em] text-cream/80"></p>
+    <div id="coverOrn" class="mt-6 w-56"></div>
+
+    <div class="deco-frame mt-10 px-7 py-4">
+      <p class="text-[10px] uppercase tracking-[.34em] text-muted">Kepada Yth.</p>
+      <p id="guestName" class="mt-1.5 font-display text-[19px] text-goldlight"></p>
+      <p class="mt-1 text-[12px] text-muted">Bapak/Ibu/Saudara/i</p>
+    </div>
+
+    <button id="openBtn" class="gold-btn mt-10 px-10 py-3.5 text-[12px] font-semibold uppercase">Buka Undangan</button>
+  </div>
+
+  <p id="coverFoot" class="absolute bottom-7 left-0 right-0 text-center text-[11px] uppercase tracking-[.3em] text-cream/50"></p>
+</div>
+
+<!-- ================= BOTTOM NAVIGATION ================= -->
+<nav id="bottomnav" class="nav-hide rounded-2xl" aria-label="Navigasi undangan">
+  <ul id="navList" class="flex items-stretch"></ul>
+</nav>
+
+<!-- ================= TOMBOL MUSIK MUTE/UNMUTE ================= -->
+<button id="musicBtn" class="nav-hide fixed right-3 bottom-[86px] z-[70] h-11 w-11 rounded-full border border-gold/30 bg-ink/85 text-gold backdrop-blur-md" aria-label="Matikan musik">
+  <span id="icOn"></span><span id="icOff" class="gone"></span>
+</button>
+
+<!-- ================= LIGHTBOX GALERI ================= -->
+<div id="lightbox" class="gone fixed inset-0 z-[80] bg-black/95 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label="Pratinjau foto galeri">
+  <button id="lbClose" class="lb-btn absolute right-3.5 top-3.5 z-10" aria-label="Tutup"></button>
+  <button id="lbPrev" class="lb-btn absolute left-3 top-1/2 z-10 -translate-y-1/2" aria-label="Foto sebelumnya"></button>
+  <button id="lbNext" class="lb-btn absolute right-3 top-1/2 z-10 -translate-y-1/2" aria-label="Foto berikutnya"></button>
+  <figure class="flex h-full flex-col items-center justify-center gap-4 px-12">
+    <img id="lbImg" class="max-h-[72vh] w-auto max-w-full border border-gold/30" alt="">
+    <figcaption id="lbCap" class="text-center text-[13px] uppercase tracking-[.18em] text-muted"></figcaption>
+  </figure>
+</div>
+
+<!-- ================= TOAST ================= -->
+<div id="toast" role="status" class="fixed bottom-[96px] left-0 right-0 z-[90] mx-auto w-max max-w-[85%] rounded-full border border-gold/30 bg-[#17130d]/95 px-5 py-2.5 text-[15px] text-goldlight"></div>
+
+<script>
+/* =====================================================================
+   1) DATA — SEMUA isi undangan diubah di sini (tidak ada di-hardcode)
+   ===================================================================== */
+const DATA = {
+  guestDefault: "Tamu Undangan",
+  music: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3", // placeholder — ganti dengan MP3 milikmu
+
+  couple: {
+    coverPhoto: "https://picsum.photos/seed/annisa-faraz-cover/1080/1620.jpg",
+    bride: { nick:"Annisa", full:"Annisa Rahmawati, S.Ds.", childOf:"Putri pertama dari",
+             father:"Bapak Ahmad Hassan", mother:"Ibu Siti Aminah",
+             photo:"https://picsum.photos/seed/annisa-bride/640/800.jpg", ig:"@annisa.rhmwt" },
+    groom: { nick:"Faraz", full:"Muhammad Faraz Abrar, S.T.", childOf:"Putra kedua dari",
+             father:"Bapak Hendra Wijaya", mother:"Ibu Dewi Lestari",
+             photo:"https://picsum.photos/seed/faraz-groom/640/800.jpg", ig:"@faraz.abr" }
+  },
+
+  opening: {
+    salamAr : "بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ",
+    salamId : "Dengan memohon rahmat dan ridha Allah SWT",
+    quoteAr : "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً",
+    quoteId : "“Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan dari jenismu sendiri, agar kamu merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.”",
+    quoteSource: "QS. Ar-Rum : 21",
+    greeting: "Assalamu'alaikum Warahmatullahi Wabarakatuh. Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu pada momen bahagia kami.",
+    family  : "Keluarga Besar Kedua Mempelai"
+  },
+
+  event: {
+    dateISO: "2026-11-15T08:00:00+07:00",        // acuan countdown
+    dateLabel: "Minggu, 15 November 2026",        // label hari & tanggal
+    venue: "Halaman Tujuh",
+    address: "Jl. Pahlawan Seribu No. 7, Rempoa, Tangerang Selatan, Banten 15414", // placeholder
+    mapsUrl: "https://www.google.com/maps/search/?api=1&query=Halaman+Tujuh+Tangerang+Selatan",
+    akad:    { tag:"Sesi 1", name:"Akad Nikah", time:"08.00 – 10.00 WIB",
+               start:"2026-11-15T08:00:00+07:00", end:"2026-11-15T10:00:00+07:00" },
+    resepsi: { tag:"Sesi 2", name:"Resepsi",    time:"11.00 – 14.00 WIB",
+               start:"2026-11-15T11:00:00+07:00", end:"2026-11-15T14:00:00+07:00" }
+  },
+
+  story: [
+    { year:"2019", title:"Awal Bertemu",
+      text:"Dipertemukan secara tak sengaja pada sebuah kegiatan sukarela di bulan Ramadhan. Obrolan singkat tentang hal-hal kecil ternyata menjadi awal dari segalanya." },
+    { year:"2022", title:"Menjalin Komitmen",
+      text:"Melewati jauh dan dekat, suka dan duka, kami sepakat untuk saling menjadi tempat pulang dan tumbuh bersama menuju tujuan yang sama." },
+    { year:"2025", title:"Lamaran & Janji",
+      text:"Di hadapan keluarga, Faraz menuangkan niat baiknya. Kini kami melangkah ke babak baru: mengikat janji suci di hadapan Allah SWT." }
+  ],
+
+  gallery: [1,2,3,4,5,6,7,8].map(n => ({
+    t: `https://picsum.photos/seed/afrz-g${n}/640/800.jpg`,
+    f: `https://picsum.photos/seed/afrz-g${n}/960/1280.jpg`,
+    alt: `Momen bersama ${n}`
+  })),
+
+  gifts: {
+    note: "Kehadiran dan doa restu Bapak/Ibu/Saudara/i adalah hadiah terindah bagi kami. Namun jika ingin memberikan tanda kasih, kami sediakan melalui:",
+    accounts: [
+      { type:"Bank",     name:"Bank BCA",       number:"1234567890",    holder:"Annisa Rahmawati" },
+      { type:"Bank",     name:"Bank Mandiri",   number:"9876543210",    holder:"Muhammad Faraz Abrar" },
+      { type:"E-Wallet", name:"GoPay / QRIS",   number:"0812-3456-7890",holder:"Annisa Rahmawati" }
+    ],
+    giftAddress: { receiver:"Annisa Rahmawati",
+      address:"Jl. Melati Indah No. 21, RT 003 RW 005, Rempoa, Tangerang Selatan, Banten 15414",
+      phone:"0812-3456-7890" }
+  },
+
+  closing: {
+    text: "Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu. Atas kehadiran serta doanya, kami ucapkan terima kasih.",
+    signoff: "Kami yang berbahagia,"
+  }
+};
+
+/* =====================================================================
+   2) Util kecil & tamu dari parameter URL ?to=Nama+Tamu
+   ===================================================================== */
+const el = id => document.getElementById(id);
+const B = DATA.couple.bride, G = DATA.couple.groom;
+
+const params = new URLSearchParams(location.search);
+const guestName = (params.get("to") || "").trim() || DATA.guestDefault;
+el("guestName").textContent = guestName;   // textContent = aman dari input URL
+document.title = `Undangan — ${B.nick} & ${G.nick}`;
+
+/* =====================================================================
+   3) Aset visual: ornamen art deco & ikon garis (SVG inline, tanpa emoji)
+   ===================================================================== */
+const ORNAMENT = `<svg viewBox="0 0 260 24" class="mx-auto h-5 w-56 text-gold" fill="none" aria-hidden="true">
+  <line x1="4" y1="12" x2="94" y2="12" stroke="currentColor" stroke-opacity=".5"/>
+  <line x1="166" y1="12" x2="256" y2="12" stroke="currentColor" stroke-opacity=".5"/>
+  <circle cx="96" cy="12" r="1.6" fill="currentColor"/><circle cx="164" cy="12" r="1.6" fill="currentColor"/>
+  <path d="M100 12q9 -9 18 0q-9 9 -18 0Z" stroke="currentColor" stroke-opacity=".65"/>
+  <path d="M142 12q9 9 18 0q-9 -9 -18 0Z" stroke="currentColor" stroke-opacity=".65"/>
+  <path d="M130 3l9 9-9 9-9-9z" fill="currentColor" fill-opacity=".9"/>
+  <path d="M130 6.5l5.5 5.5-5.5 5.5-5.5-5.5z" stroke="#0D0D0D" stroke-width="1.2"/>
+</svg>`;
+
+const CORNER = `<svg viewBox="0 0 64 64" class="h-12 w-12 text-gold" fill="none" stroke="currentColor" aria-hidden="true">
+  <path d="M1.5 62.5V22Q1.5 1.5 22 1.5H62.5" stroke-opacity=".8"/>
+  <path d="M9 62.5V25Q9 9 25 9h37.5" stroke-opacity=".38"/>
+  <rect x="17" y="17" width="8" height="8" transform="rotate(45 21 21)" fill="currentColor" stroke="none"/>
+</svg>`;
+
+const I = p => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-[18px] w-[18px]" aria-hidden="true">${p}</svg>`;
+const ICONS = {
+  home : I('<path d="M3.5 10.5 12 3.5l8.5 7"/><path d="M5.5 9.5V20h13V9.5"/><path d="M10 20v-5h4v5"/>'),
+  rings: I('<circle cx="9" cy="13.8" r="4.8"/><circle cx="15" cy="13.8" r="4.8"/><path d="M15 3.4l1.9 2.1-1.9 2.1-1.9-2.1z"/>'),
+  cal  : I('<rect x="4" y="5.5" width="16" height="15" rx="1.5"/><path d="M4 10h16"/><path d="M8 3.5v4M16 3.5v4"/>'),
+  photo: I('<rect x="4" y="5" width="16" height="14" rx="1.5"/><circle cx="9" cy="10" r="1.6"/><path d="M4 17l5-4.5 3.5 3 3-2.5 4.5 4"/>'),
+  gift : I('<rect x="4.5" y="9" width="15" height="11.5" rx="1"/><path d="M12 9v11.5M4.5 13.5h15"/><path d="M12 9c-4 0-5-1.6-5-3a1.8 1.8 0 0 1 3.4-.7C11 6.6 12 9 12 9Zm0 0c4 0 5-1.6 5-3a1.8 1.8 0 0 0-3.4-.7C13 6.6 12 9 12 9Z"/>'),
+  chat : I('<path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7a2.5 2.5 0 0 1-2.5 2.5H9l-5 4z"/>'),
+  pin  : I('<path d="M12 21s-6.5-5.4-6.5-10a6.5 6.5 0 0 1 13 0c0 4.6-6.5 10-6.5 10Z"/><circle cx="12" cy="10.5" r="2.3"/>'),
+  clock: I('<circle cx="12" cy="12" r="8"/><path d="M12 7.5V12l3 2"/>'),
+  volOn : I('<path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5z"/><path d="M15.5 9a4.2 4.2 0 0 1 0 6"/><path d="M18 6.8a7.6 7.6 0 0 1 0 10.4"/>'),
+  volOff: I('<path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5z"/><path d="M16 9.8l5 4.4M21 9.8l-5 4.4"/>'),
+  x    : I('<path d="M6 6l12 12M18 6 6 18"/>'),
+  chevL: I('<path d="M14.5 5.5 8 12l6.5 6.5"/>'),
+  chevR: I('<path d="M9.5 5.5 16 12l-6.5 6.5"/>'),
+  heart: '<svg viewBox="0 0 24 24" class="h-3 w-3" fill="currentColor" aria-hidden="true"><path d="M12 21C7 16.6 3.5 13.3 3.5 9.6A4.6 4.6 0 0 1 12 7a4.6 4.6 0 0 1 8.5 2.6c0 3.7-3.5 7-8.5 11.4Z"/></svg>'
+};
+
+/* =====================================================================
+   4) Render tiap bagian dari DATA
+   ===================================================================== */
+function head(kicker, title, sub){
+  return `<div class="rv text-center">
+    <p class="text-[11px] uppercase tracking-[.42em] text-gold/85">${kicker}</p>
+    <h2 class="gold-text mt-3 font-display text-[30px] leading-tight">${title}</h2>
+    ${ORNAMENT}
+    ${sub ? `<p class="mt-3 text-[15px] leading-relaxed text-muted">${sub}</p>` : ``}
+  </div>`;
+}
+
+/* --- Cover --- */
+(function renderCover(){
+  el("coverImg").src = DATA.couple.coverPhoto;
+  el("coverNames").innerHTML = `${B.nick} <span class="mx-1 text-[32px] text-goldlight">&amp;</span> ${G.nick}`;
+  el("coverDate").textContent = DATA.event.dateLabel;
+  el("coverFoot").textContent = `${DATA.event.venue} • ${DATA.event.dateLabel}`;
+  el("coverOrn").innerHTML = ORNAMENT;
+  const defs = [
+    ["top:-1px;left:-1px",""],["top:-1px;right:-1px","rotate-90"],
+    ["bottom:-1px;right:-1px","rotate-180"],["bottom:-1px;left:-1px","-rotate-90"]
+  ];
+  el("coverCorners").innerHTML = defs.map(([pos,rot]) =>
+    `<span class="absolute h-12 w-12 ${rot}" style="${pos}">${CORNER}</span>`).join("");
+})();
+
+/* --- 2) Salam pembuka + Ar-Rum:21 + sambutan --- */
+el("beranda").innerHTML = `
+  <div class="rv text-center">
+    <p class="font-arab text-[22px] leading-relaxed text-goldlight">${DATA.opening.salamAr}</p>
+    <p class="mt-2 text-[12px] uppercase tracking-[.28em] text-muted">${DATA.opening.salamId}</p>
+  </div>
+  <figure class="rv deco-frame mt-10 px-6 py-7 text-center" style="transition-delay:.08s">
+    <p class="font-arab text-[19px] leading-[2] text-cream/90">${DATA.opening.quoteAr}</p>
+    <p class="mt-5 text-[15px] italic leading-relaxed text-cream/75">${DATA.opening.quoteId}</p>
+    <figcaption class="mt-4 text-[11px] uppercase tracking-[.3em] text-gold">${DATA.opening.quoteSource}</figcaption>
+  </figure>
+  <div class="rv mt-10 text-center" style="transition-delay:.12s">
+    <p class="text-[15px] leading-relaxed text-cream/80">${DATA.opening.greeting}</p>
+    <p class="mt-5 font-display text-[17px] tracking-wide text-goldlight">${DATA.opening.family}</p>
+  </div>`;
+
+/* --- 3) Profil mempelai --- */
+function profileCard(p, delay){
+  return `<article class="rv deco-frame bg-white/[.015] p-5" style="transition-delay:${delay}s">
+    <div class="relative overflow-hidden border border-gold/25">
+      <img src="${p.photo}" alt="Foto ${p.nick}" loading="lazy" class="h-64 w-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent"></div>
+    </div>
+    <h3 class="gold-text mt-5 text-center font-display text-[30px]">${p.nick}</h3>
+    <p class="mt-1.5 text-center text-[15px] text-cream/85">${p.full}</p>
+    <div class="mx-auto mt-4 h-px w-16 bg-gold/40"></div>
+    <p class="mt-4 text-center text-[13px] uppercase tracking-[.18em] text-muted">${p.childOf} :</p>
+    <p class="mt-1 text-center text-[15px] text-cream/85">${p.father}</p>
+    <p class="text-center text-[15px] text-cream/85">&amp; ${p.mother}</p>
+    <a href="https://instagram.com/${p.ig.replace("@","")}" target="_blank" rel="noopener"
+       class="mt-4 block text-center text-[13px] tracking-[.12em] text-gold/90 hover:text-goldlight">${p.ig}</a>
+  </article>`;
+}
+el("mempelai").innerHTML = head("Bride & Groom", "Mempelai")
+  + profileCard(B, .05)
+  + `<div class="rv my-7 text-center"><span class="gold-text font-display text-[36px]">&amp;</span></div>`
+  + profileCard(G, .1);
+
+/* --- 4) Countdown + 5) Detail acara --- */
+const EVENTS = [DATA.event.akad, DATA.event.resepsi].map(e => ({
+  ...e, place: DATA.event.venue, address: DATA.event.address, mapsUrl: DATA.event.mapsUrl
+}));
+
+function eventCard(e, i){
+  const day = DATA.event.dateLabel.split(",")[0];
+  return `<article class="rv deco-frame mt-6 bg-white/[.015] p-6" style="transition-delay:${i * .08}s">
+    <p class="text-center text-[11px] uppercase tracking-[.4em] text-gold/85">${e.tag}</p>
+    <h3 class="mt-2 text-center font-display text-[24px] text-cream">${e.name}</h3>
+    <div class="mx-auto mt-4 h-px w-14 bg-gold/40"></div>
+    <ul class="mt-5 space-y-4 text-[15px]">
+      <li class="flex items-start gap-3">
+        <span class="mt-0.5 shrink-0 text-gold">${ICONS.clock}</span>
+        <span><span class="block text-[11px] uppercase tracking-[.2em] text-muted">Waktu</span>${day}, ${e.time}</span>
+      </li>
+      <li class="flex items-start gap-3">
+        <span class="mt-0.5 shrink-0 text-gold">${ICONS.pin}</span>
+        <span><span class="block text-[11px] uppercase tracking-[.2em] text-muted">Tempat</span>
+          <span class="font-medium text-goldlight">${e.place}</span>
+          <span class="mt-0.5 block text-[14px] leading-relaxed text-cream/75">${e.address}</span></span>
+      </li>
+    </ul>
+    <div class="mt-6 grid grid-cols-2 gap-2.5">
+      <a href="${e.mapsUrl}" target="_blank" rel="noopener"
+         class="ghost-btn flex items-center justify-center gap-2 px-2 py-3 text-center text-[11px] font-semibold uppercase">${ICONS.pin} Maps</a>
+      <button type="button" data-ics="${i}"
+         class="ghost-btn flex items-center justify-center gap-2 px-2 py-3 text-center text-[11px] font-semibold uppercase">${ICONS.cal} Kalender</button>
+    </div>
+  </article>`;
+}
+
+el("acara").innerHTML = head("Save The Date", "Waktu &amp; Tempat")
+  + `<div class="rv deco-frame mt-10 px-4 py-6 text-center" style="transition-delay:.06s">
+      <p class="text-[13px] uppercase tracking-[.22em] text-cream/80">Menuju Hari Bahagia</p>
+      <p class="mt-1.5 font-display text-[16px] tracking-[.14em] text-goldlight">${DATA.event.dateLabel}</p>
+      <div id="cdGrid" class="mt-5 grid grid-cols-4 gap-2.5">
+        ${["Hari","Jam","Menit","Detik"].map((l,i)=>`
+          <div class="border border-gold/25 bg-white/[.02] py-3">
+            <p id="cd-${["d","h","m","s"][i]}" class="gold-text font-display text-[26px] leading-none">00</p>
+            <p class="mt-1.5 text-[10px] uppercase tracking-[.22em] text-muted">${l}</p>
+          </div>`).join("")}
+      </div>
+      <p id="cdDone" class="gone mt-3 text-[15px] leading-relaxed text-goldlight"></p>
+    </div>`
+  + EVENTS.map(eventCard).join("");
+
+/* --- 6) Love story (timeline) --- */
+el("cerita").innerHTML = head("Our Journey", "Kisah Kami")
+  + `<div class="mt-10">${DATA.story.map((s,i)=>`
+      <div class="rv tl-item" style="transition-delay:${i * .08}s">
+        <p class="gold-text font-display text-[20px] tracking-[.08em]">${s.year}</p>
+        <h3 class="mt-1 text-[16px] font-semibold tracking-wide text-cream">${s.title}</h3>
+        <p class="mt-2 text-[15px] leading-relaxed text-cream/75">${s.text}</p>
+      </div>`).join("")}</div>`;
+
+/* --- 7) Galeri + lightbox --- */
+el("galeri").innerHTML = head("Moments", "Galeri")
+  + `<div class="mt-10 grid grid-cols-2 gap-2.5">${DATA.gallery.map((g,i)=>`
+      <button type="button" data-gal="${i}" aria-label="Lihat foto ${i+1}"
+        class="rv group relative overflow-hidden border border-gold/25 ${i===0 ? "col-span-2 h-52" : "aspect-[3/4]"}"
+        style="transition-delay:${Math.min(i * .06, .3)}s">
+        <img src="${g.t}" alt="${g.alt}" loading="lazy"
+             class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <span class="pointer-events-none absolute inset-0 bg-ink/15 transition-colors duration-500 group-hover:bg-ink/0"></span>
+      </button>`).join("")}</div>`;
+
+/* --- 8) Amplop digital --- */
+el("hadiah").innerHTML = head("Wedding Gift", "Amplop Digital", DATA.gifts.note)
+  + `<div class="mt-10 space-y-4">${DATA.gifts.accounts.map((a,i)=>`
+      <article class="rv deco-frame p-5" style="transition-delay:${i * .06}s">
+        <p class="text-[10px] uppercase tracking-[.34em] text-muted">${a.type}</p>
+        <h3 class="mt-1 font-display text-[19px] text-goldlight">${a.name}</h3>
+        <p class="mt-2.5 font-display text-[20px] tracking-[.14em] text-cream">${a.number}</p>
+        <p class="mt-1 text-[13px] text-cream/70">a.n. ${a.holder}</p>
+        <button type="button" data-copy="acc:${i}"
+          class="ghost-btn mt-4 w-full py-2.5 text-[11px] font-semibold uppercase tracking-[.18em]">Salin Nomor</button>
+      </article>`).join("")}
+    </div>
+    <article class="rv deco-frame mt-4 p-5" style="transition-delay:.1s">
+      <p class="text-[10px] uppercase tracking-[.34em] text-muted">Kirim Hadiah</p>
+      <p class="mt-2 text-[15px] text-cream/85">${DATA.gifts.giftAddress.receiver}</p>
+      <p class="mt-1 text-[14px] leading-relaxed text-cream/70">${DATA.gifts.giftAddress.address}</p>
+      <p class="mt-1 text-[14px] text-cream/70">Telp/WA: ${DATA.gifts.giftAddress.phone}</p>
+      <button type="button" data-copy="addr"
+        class="ghost-btn mt-4 w-full py-2.5 text-[11px] font-semibold uppercase tracking-[.18em]">Salin Alamat</button>
+    </article>`;
+
+/* --- 9) RSVP + ucapan --- */
+el("ucapan").innerHTML = head("RSVP &amp; Wishes", "Ucapan &amp; Doa")
+  + `<form id="rsvpForm" class="rv deco-frame mt-10 space-y-5 p-6" novalidate style="transition-delay:.06s">
+      <div>
+        <label for="fName" class="text-[11px] uppercase tracking-[.26em] text-gold/85">Nama</label>
+        <input id="fName" class="field mt-2" type="text" maxlength="40" placeholder="Nama Anda" autocomplete="name">
+      </div>
+      <div>
+        <span class="text-[11px] uppercase tracking-[.26em] text-gold/85">Kehadiran</span>
+        <div class="mt-2 grid grid-cols-2 gap-2.5" role="group" aria-label="Konfirmasi kehadiran">
+          <button type="button" data-attend="hadir" class="attend-opt sel">Insya Allah Hadir</button>
+          <button type="button" data-attend="berhalangan" class="attend-opt">Berhalangan</button>
+        </div>
+      </div>
+      <div>
+        <label for="fGuests" class="text-[11px] uppercase tracking-[.26em] text-gold/85">Jumlah Tamu</label>
+        <select id="fGuests" class="field mt-2">
+          ${[1,2,3,4,5].map(n=>`<option value="${n}">${n} orang</option>`).join("")}
+        </select>
+      </div>
+      <div>
+        <label for="fMsg" class="text-[11px] uppercase tracking-[.26em] text-gold/85">Ucapan &amp; Doa</label>
+        <textarea id="fMsg" rows="4" maxlength="300" class="field mt-2 resize-none" placeholder="Tuliskan ucapan dan doa terbaik Anda..."></textarea>
+      </div>
+      <p id="formErr" class="gone text-[13px] text-[#E08A8A]"></p>
+      <button type="submit" class="gold-btn w-full py-3.5 text-[12px] font-semibold uppercase tracking-[.2em]">Kirim Ucapan</button>
+    </form>
+    <div id="wishStats" class="rv mt-8 text-center text-[13px] uppercase tracking-[.2em] text-muted"></div>
+    <ul id="wishList" class="mt-4 space-y-3"></ul>`;
+
+/* --- 10) Penutup + footer --- */
+el("penutup").innerHTML = `
+  <div class="rv text-center">
+    ${ORNAMENT}
+    <p class="mt-6 text-[15px] leading-relaxed text-cream/80">${DATA.closing.text}</p>
+    <p class="mt-7 text-[12px] uppercase tracking-[.3em] text-muted">${DATA.closing.signoff}</p>
+    <p class="gold-text mt-3 font-display text-[30px] leading-tight">${B.nick} &amp; ${G.nick}</p>
+    <p class="mt-2 text-[13px] text-muted">beserta keluarga besar</p>
+  </div>`;
+document.querySelector("footer").innerHTML = `
+  <div class="mx-auto h-px w-24 bg-gold/30"></div>
+  <p class="mt-4 text-[12px] uppercase tracking-[.22em] text-muted">The Wedding of ${B.nick} &amp; ${G.nick} • ${new Date().getFullYear()}</p>
+  <p class="mt-2 flex items-center justify-center gap-1.5 text-[12px] text-muted">Dibuat dengan ${ICONS.heart} <span class="text-goldlight">Ahira</span></p>`;
+
+/* --- 11) Bottom navigation --- */
+const NAV = [
+  ["beranda","Beranda","home"], ["mempelai","Mempelai","rings"], ["acara","Acara","cal"],
+  ["galeri","Galeri","photo"], ["hadiah","Hadiah","gift"], ["ucapan","Ucapan","chat"]
+];
+el("navList").innerHTML = NAV.map(([id,label,ic])=>`
+  <li class="flex-1">
+    <a href="#${id}" data-nav="${id}" class="nav-link flex flex-col items-center gap-1 py-2.5">
+      ${ICONS[ic]}<span class="text-[10px] uppercase tracking-[.12em]">${label}</span>
+    </a>
+  </li>`).join("");
+
+/* Ikon statis pada elemen fungsional */
+el("icOn").innerHTML = ICONS.volOn; el("icOff").innerHTML = ICONS.volOff;
+el("lbClose").innerHTML = ICONS.x; el("lbPrev").innerHTML = ICONS.chevL; el("lbNext").innerHTML = ICONS.chevR;
+
+/* =====================================================================
+   5) Toast
+   ===================================================================== */
+let toastTimer;
+function toast(msg){
+  const t = el("toast");
+  t.textContent = msg;                     // textContent, bukan innerHTML
+  t.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>t.classList.remove("show"), 2300);
+}
+
+/* =====================================================================
+   6) Salin ke clipboard (dengan fallback) — toast "Berhasil disalin"
+   ===================================================================== */
+async function copyText(txt){
+  try { await navigator.clipboard.writeText(txt); return true; }
+  catch(e){
+    try {
+      const ta = document.createElement("textarea");
+      ta.value = txt; ta.style.cssText = "position:fixed;opacity:0";
+      document.body.appendChild(ta); ta.select();
+      const ok = document.execCommand("copy"); ta.remove(); return ok;
+    } catch(e2){ return false; }
+  }
+}
+document.addEventListener("click", async ev=>{
+  const b = ev.target.closest("[data-copy]");
+  if(!b) return;
+  const key = b.dataset.copy;
+  let txt = "";
+  if(key === "addr"){
+    const g = DATA.gifts.giftAddress;
+    txt = `${g.receiver}\n${g.address}\nTelp/WA: ${g.phone}`;
+  } else if(key.startsWith("acc:")){
+    txt = DATA.gifts.accounts[+key.slice(4)].number;
+  }
+  toast((await copyText(txt)) ? "Berhasil disalin" : "Gagal menyalin — salin manual ya");
+});
+
+/* =====================================================================
+   7) Simpan ke Kalender (.ics dibuat lokal via Blob)
+   ===================================================================== */
+const icsDate = iso => new Date(iso).toISOString().replace(/[-:]/g,"").split(".")[0] + "Z";
+const icsEsc  = s => s.replace(/([,;])/g,"\\$1");
+function downloadICS(e){
+  const stamp = new Date().toISOString().replace(/[-:]/g,"").split(".")[0] + "Z";
+  const lines = ["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Undangan Annisa Faraz//ID","BEGIN:VEVENT",
+    `UID:afrz-${icsDate(e.start)}-${e.name.replace(/\s+/g,"")}`,
+    `DTSTAMP:${stamp}`,`DTSTART:${icsDate(e.start)}`,`DTEND:${icsDate(e.end)}`,
+    `SUMMARY:${icsEsc(`${e.name} — ${B.nick} & ${G.nick}`)}`,
+    `LOCATION:${icsEsc(`${e.place}, ${e.address}`)}`,
+    `DESCRIPTION:${icsEsc(`Undangan pernikahan • ${DATA.event.dateLabel} • ${e.time}`)}`,
+    "END:VEVENT","END:VCALENDAR"];
+  const url = URL.createObjectURL(new Blob([lines.join("\r\n")], {type:"text/calendar;charset=utf-8"}));
+  const a = document.createElement("a");
+  a.href = url; a.download = "undangan-annisa-faraz.ics";
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url), 4000);
+  toast("File kalender diunduh — buka untuk menambahkan acara");
+}
+document.addEventListener("click", ev=>{
+  const b = ev.target.closest("[data-ics]");
+  if(b) downloadICS(EVENTS[+b.dataset.ics]);
+});
+
+/* =====================================================================
+   8) Countdown menuju hari H
+   ===================================================================== */
+(function countdown(){
+  const target = new Date(DATA.event.dateISO).getTime();
+  const E = { d:el("cd-d"), h:el("cd-h"), m:el("cd-m"), s:el("cd-s") };
+  function tick(){
+    const ms = target - Date.now();
+    if(ms <= 0){
+      el("cdGrid").classList.add("gone");
+      const done = el("cdDone");
+      done.textContent = "Insya Allah, hari bahagia telah tiba. Terima kasih atas doa dan restunya.";
+      done.classList.remove("gone");
+      return;
+    }
+    const s = Math.floor(ms / 1000);
+    E.d.textContent = Math.floor(s / 86400);
+    E.h.textContent = String(Math.floor(s/3600) % 24).padStart(2,"0");
+    E.m.textContent = String(Math.floor(s/60) % 60).padStart(2,"0");
+    E.s.textContent = String(s % 60).padStart(2,"0");
+  }
+  tick(); setInterval(tick, 1000);
+})();
+
+/* =====================================================================
+   9) Lightbox galeri
+   ===================================================================== */
+const lb = el("lightbox"), lbImg = el("lbImg"), lbCap = el("lbCap");
+let lbI = 0;
+function updateLB(){
+  const g = DATA.gallery[lbI];
+  lbImg.src = g.f; lbImg.alt = g.alt;
+  lbCap.textContent = `${lbI+1} / ${DATA.gallery.length} — ${g.alt}`;
+}
+function openLB(i){ lbI = i; updateLB(); lb.classList.remove("gone"); document.documentElement.classList.add("lock"); }
+function closeLB(){ lb.classList.add("gone"); document.documentElement.classList.remove("lock"); }
+function stepLB(d){ lbI = (lbI + d + DATA.gallery.length) % DATA.gallery.length; updateLB(); }
+document.addEventListener("click", ev=>{
+  const b = ev.target.closest("[data-gal]");
+  if(b) openLB(+b.dataset.gal);
+});
+el("lbClose").addEventListener("click", closeLB);
+el("lbPrev").addEventListener("click", ()=>stepLB(-1));
+el("lbNext").addEventListener("click", ()=>stepLB(1));
+lb.addEventListener("click", e=>{ if(e.target === lb) closeLB(); });
+document.addEventListener("keydown", e=>{
+  if(lb.classList.contains("gone")) return;
+  if(e.key === "Escape") closeLB();
+  if(e.key === "ArrowLeft") stepLB(-1);
+  if(e.key === "ArrowRight") stepLB(1);
+});
+
+/* =====================================================================
+   10) RSVP + ucapan (localStorage dengan try/catch)
+   ===================================================================== */
+const WKEY = "afrz_wishes_v1";
+let attendState = "hadir";
+
+function loadWishes(){
+  try { const a = JSON.parse(localStorage.getItem(WKEY) || "[]"); return Array.isArray(a) ? a : []; }
+  catch(e){ return []; }
+}
+function saveWishes(arr){
+  try { localStorage.setItem(WKEY, JSON.stringify(arr)); return true; }
+  catch(e){ toast("Penyimpanan tidak tersedia di browser ini"); return false; }
+}
+function fmtTime(t){
+  try { return new Date(t).toLocaleString("id-ID",{day:"numeric",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit"}); }
+  catch(e){ return ""; }
+}
+function renderWishes(){
+  const arr = loadWishes();
+  const list = el("wishList");
+  list.innerHTML = "";
+  const hadir = arr.filter(w => w.attend === "hadir").length;
+  el("wishStats").textContent = `${arr.length} ucapan • ${hadir} konfirmasi hadir`;
+
+  arr.forEach(w=>{
+    const li = document.createElement("li");
+    li.className = "rv deco-frame flex gap-3.5 bg-white/[.015] p-4";
+
+    const av = document.createElement("span");
+    av.className = "mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center border border-gold/45 font-display text-[15px] text-goldlight";
+    av.textContent = (w.name || "T").trim().charAt(0).toUpperCase() || "T";
+
+    const body = document.createElement("div"); body.className = "min-w-0 flex-1";
+    const top  = document.createElement("div"); top.className = "flex flex-wrap items-center gap-x-2.5 gap-y-1";
+
+    const nm = document.createElement("p"); nm.className = "text-[15px] font-medium text-cream"; nm.textContent = w.name;
+    const bd = document.createElement("span");
+    bd.className = "badge " + (w.attend === "hadir" ? "badge-in" : "badge-out");
+    bd.textContent = w.attend === "hadir" ? (w.guests > 1 ? `Hadir • ${w.guests} tamu` : "Hadir") : "Berhalangan";
+    const tm = document.createElement("span"); tm.className = "ml-auto text-[12px] text-muted"; tm.textContent = fmtTime(w.time);
+    top.append(nm, bd, tm);
+
+    const ms = document.createElement("p");
+    ms.className = "mt-1.5 break-words text-[15px] leading-relaxed text-cream/80";
+    ms.textContent = w.msg;
+    body.append(top, ms);
+    li.append(av, body);
+    list.appendChild(li);
+  });
+  watchRv();
+}
+document.querySelectorAll(".attend-opt").forEach(b=>{
+  b.addEventListener("click", ()=>{
+    attendState = b.dataset.attend;
+    document.querySelectorAll(".attend-opt").forEach(x=>x.classList.toggle("sel", x === b));
+    const sel = el("fGuests");
+    sel.disabled = attendState !== "hadir";
+    sel.style.opacity = attendState === "hadir" ? "1" : ".45";
+  });
+});
+el("rsvpForm").addEventListener("submit", e=>{
+  e.preventDefault();
+  const name = el("fName").value.trim(), msg = el("fMsg").value.trim(), err = el("formErr");
+  if(!name || !msg){
+    err.textContent = "Mohon isi nama dan ucapan terlebih dahulu.";
+    err.classList.remove("gone"); return;
+  }
+  err.classList.add("gone");
+  const wish = { id:Date.now(), name, attend:attendState,
+                 guests: attendState === "hadir" ? parseInt(el("fGuests").value,10) || 1 : 0,
+                 msg, time:Date.now() };
+  const arr = loadWishes(); arr.unshift(wish);
+  if(saveWishes(arr)){
+    renderWishes();
+    el("fMsg").value = "";                       // nama tetap terisi untuk koreksi cepat
+    toast("Terima kasih, ucapan Anda telah tersimpan");
+  }
+});
+el("fName").value = guestName;                   // prefill dari ?to=
+renderWishes();
+
+/* =====================================================================
+   11) Reveal saat masuk viewport (IntersectionObserver)
+   ===================================================================== */
+const rvIO = new IntersectionObserver(es=>es.forEach(x=>{
+  if(x.isIntersecting){ x.target.classList.add("in"); rvIO.unobserve(x.target); }
+}), { threshold:.12, rootMargin:"0px 0px -6% 0px" });
+function watchRv(scope = document){
+  scope.querySelectorAll(".rv:not(.in)").forEach(n=>rvIO.observe(n));
+}
+watchRv();
+
+/* =====================================================================
+   12) Highlight nav aktif
+   ===================================================================== */
+const navLinks = Object.fromEntries(NAV.map(([id])=>[id, document.querySelector(`[data-nav="${id}"]`)]));
+const secIO = new IntersectionObserver(es=>es.forEach(x=>{
+  if(x.isIntersecting && navLinks[x.target.id]){
+    Object.values(navLinks).forEach(a=>a.classList.remove("active"));
+    navLinks[x.target.id].classList.add("active");
+  }
+}), { rootMargin:"-42% 0px -52% 0px", threshold:0 });
+NAV.forEach(([id])=>secIO.observe(el(id)));
+navLinks.beranda.classList.add("active");
+
+/* =====================================================================
+   13) Musik latar: play saat cover dibuka, mute/unmute,
+       tombol disembunyikan otomatis jika audio gagal dimuat
+   ===================================================================== */
+let audio = null;
+function initAudio(){
+  try {
+    audio = new Audio(DATA.music);
+    audio.loop = true; audio.volume = .55; audio.preload = "auto";
+    audio.addEventListener("error", ()=>el("musicBtn").classList.add("gone"), { once:true });
+  } catch(e){ el("musicBtn").classList.add("gone"); }
+}
+async function startAudio(){
+  if(!audio) return;
+  try { await audio.play(); }
+  catch(e){
+    // selain blokir autoplay → dianggap gagal, sembunyikan tombol musik
+    if(!e || e.name !== "NotAllowedError") el("musicBtn").classList.add("gone");
+  }
+}
+el("musicBtn").addEventListener("click", ()=>{
+  if(!audio || el("musicBtn").classList.contains("gone")) return;
+  if(audio.paused){ audio.play().catch(()=>el("musicBtn").classList.add("gone")); return; }
+  audio.muted = !audio.muted;
+  el("icOn").classList.toggle("gone", audio.muted);
+  el("icOff").classList.toggle("gone", !audio.muted);
+  el("musicBtn").setAttribute("aria-label", audio.muted ? "Nyalakan musik" : "Matikan musik");
+});
+
+/* =====================================================================
+   14) Cover: scroll dikunci → buka undangan (geser keluar + musik play)
+   ===================================================================== */
+el("openBtn").addEventListener("click", ()=>{
+  const c = el("cover");
+  if(c.classList.contains("open")) return;
+  c.classList.add("open");
+  document.documentElement.classList.remove("lock");   // buka kunci scroll
+  initAudio(); startAudio();                            // gesture pengguna → aman
+  el("bottomnav").classList.remove("nav-hide");
+  el("musicBtn").classList.remove("nav-hide");
+  window.scrollTo(0, 0);
+  setTimeout(()=>c.classList.add("gone"), 1050);        // bersihkan setelah transisi
+});
+</script>
+</body>
+</html>
